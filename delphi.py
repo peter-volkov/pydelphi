@@ -106,12 +106,12 @@ def get_result_rating(average_expert_scores, criteria_weights):
   
     for alternative in alternatives:
         for criterion in criteria:
-            #try:
             expert_score = average_expert_scores[criterion][alternative]
             criteria_weight = criteria_weights[criterion]
             result_rating[alternative] += expert_score * criteria_weight
 
     return sorted(result_rating.iteritems(), key=operator.itemgetter(1), reverse=True)
+
 
 if __name__ == '__main__':
 
